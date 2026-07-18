@@ -1,24 +1,21 @@
-
 package modelo;
 
 /**
- *
  * @author Gregory Jeronimo
  */
 public class Estudiante {
     private String nombre;
-     private int edad;
+    private int edad;
     private double promedio;
     private boolean activo;
     private String carrera;
 
+    // Constructor vacío
     public Estudiante() {
     }
 
-    public Estudiante(String nombre, int edad,
-            double promedio, boolean activo,
-            String carrera) {
-
+    // Constructor con parámetros
+    public Estudiante(String nombre, int edad, double promedio, boolean activo, String carrera) {
         this.nombre = nombre;
         this.edad = edad;
         this.promedio = promedio;
@@ -27,7 +24,6 @@ public class Estudiante {
     }
 
     // GETTERS Y SETTERS
-
     public String getNombre() {
         return nombre;
     }
@@ -68,6 +64,15 @@ public class Estudiante {
         this.carrera = carrera;
     }
 
-    
-    
+    // Este método le dice a Java cómo mostrar al estudiante textualmente
+    @Override
+    public String toString() {
+        return "=== DATOS DEL ESTUDIANTE ===\n" +
+               "Nombre:   " + nombre + "\n" +
+               "Edad:     " + edad + " años\n" +
+               "Promedio: " + promedio + "\n" +
+               "Estado:   " + (activo ? "Activo" : "Inactivo") + "\n" +
+               "Carrera:  " + carrera + "\n" +
+               "============================";
+    }
 }
